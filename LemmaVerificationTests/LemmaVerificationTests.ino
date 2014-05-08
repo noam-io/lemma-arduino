@@ -1,3 +1,4 @@
+#define LEMMADEBUG
 #include <aJSON.h>
 #include <SPI.h>
 #include <Ethernet.h>

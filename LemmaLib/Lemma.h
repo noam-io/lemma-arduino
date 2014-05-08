@@ -11,6 +11,8 @@
 #include "MessageFilter.h"
 #include "Message.h"
 #include "debug.h"
+#include "Heartbeat.h"
+#include "config.h"
 
 class Lemma
 {
@@ -33,7 +35,7 @@ class Lemma
     void updateConnectionStatus();
     bool postSendMessage();
 
-    static const uint16_t LISTEN_PORT = 9933;
+    void sendHeartbeat();
 
     bool _connectedToHost;
     EthernetServer server;
@@ -44,6 +46,7 @@ class Lemma
     MessageBuilder messageBuilder;
     MessageSender messageSender;
     HostLocater hostLocater;
+    Heartbeat heartbeat;
 };
 
 #endif

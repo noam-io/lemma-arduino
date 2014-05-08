@@ -1,6 +1,7 @@
 #include "MessageBuilder.h"
-#include <aJSON.h>  //REMOVE
-#include "Arduino.h"  //REMOVE
+#include <aJSON.h>
+#include "Arduino.h"
+#include "config.h"
 
 static void add(aJsonObject* root, char const * string)
 {
@@ -99,18 +100,30 @@ char * MessageBuilder::buildDoubleMessage(  char const * topicName, double value
 char * MessageBuilder::buildRegister( int port, char const** hears, int hearsSize, char const** speaks, int speaksSize ) const
 {
   aJsonObject* root = aJson.createArray();
+  aJsonObject* optionsObj;
 
   add(root, "register");
   add(root, guestName);
   add(root, port);
   add(root, hears, hearsSize);
   add(root, speaks, speaksSize);
-  add(root, "arduino");
-  add(root, "0.3");
+  add(root, LEMMA_DIALECT );
+  add(root, LEMMA_VERSION );
+  aJson.addItemToObject(root, "optionsObj", optionsObj = aJson.createObject());
+  aJson.addNumberToObject(optionsObj, "heartbeat", ((float)HEARTBEAT_PERIOD_MS / 1000) );
 
   char* string = aJson.print( root );
   aJson.deleteItem(root);
 
+  return string;
+}
+
+char * MessageBuilder::buildHeartbeat() const{
+  aJsonObject *  root = aJson.createArray();
+  add( root, "heartbeat" );
+  add( root, guestName );
+  char * string = aJson.print(root);
+  aJson.deleteItem(root);
   return string;
 }
 

@@ -13,6 +13,7 @@ class MessageBuilder
   char * buildLongMessage( char const * topicName, unsigned long value ) const;
   char * buildDoubleMessage( char const * topicName, double value ) const;
   char * buildRegister( int port, char const** hears, int hearsSize, char const** speaks, int speaksSize ) const;
+  char * buildHeartbeat() const;
 };
 
 #endif

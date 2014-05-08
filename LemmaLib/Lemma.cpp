@@ -11,6 +11,7 @@ Lemma::Lemma( const char * guestName, const char * desiredRoomName ) :
   , messageSender( guestName, hostConnection )
   , hostLocater( udpClient, guestName, desiredRoomName )
   , _connectedToHost( false )
+  , heartbeat(&millis, &messageSender)
 { }
 
 void beginEthernet(unsigned char mac[])
@@ -41,6 +42,7 @@ void Lemma::run()
   tryConnectingWithHost();
   handleIncomingConnections();
   updateConnectionStatus();
+  sendHeartbeat();
 }
 
 void Lemma::hear(char * name, handler_t callback)
@@ -161,6 +163,17 @@ bool Lemma::isConnected(){
 
 bool Lemma::postSendMessage(){
   //place to do stuff after successfully sending a message
+  heartbeat.reset();
   return true;
+}
+
+void Lemma::sendHeartbeat(){
+  if( !isConnected() ){
+    return;
+  }
+  if( !heartbeat.check() ){
+    Serial.println("Lost heartbeat connection to host.");
+    stopConnection();
+  }
 }
 

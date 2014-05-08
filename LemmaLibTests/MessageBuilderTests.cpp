@@ -39,7 +39,7 @@ test( createRegistrationMessageBatch1 ) {
   char const* hears[2] = {"event1", "event2"};
   char const* plays[3] = {"event3", "event4", "event5"};
 
-  char* expected = "[\"register\",\"spallaId\",123,[\"event1\",\"event2\"],[\"event3\",\"event4\",\"event5\"],\"arduino\",\"0.3\"]";
+  char* expected = "[\"register\",\"spallaId\",123,[\"event1\",\"event2\"],[\"event3\",\"event4\",\"event5\"],\"arduino\",\"0.3\",{\"heartbeat\":3.00300}]";
   char* actual = builder.buildRegister(123, hears, 2, plays, 3);
 
   assertEqual(String(expected), String(actual));
