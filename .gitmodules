@@ -1,0 +1,15 @@
+[submodule "ArduinoProject/aJson"]
+	path = aJson
+	url = https://github.com/interactive-matter/aJson.git
+[submodule "ArduinoProject/Arduino-Makefile"]
+	path = Arduino-Makefile
+	url = https://github.com/mjoldfield/Arduino-Makefile.git
+[submodule "CanbusLib"]
+	path = CanbusLib
+	url = git@github.com:freemarmoset/Canbus.git
+[submodule "EasyTransferLib"]
+	path = EasyTransferLib
+	url = git@github.com:madsci1016/Arduino-EasyTransfer.git
+[submodule "arduinounit"]
+	path = arduinounit
+	url = https://github.com/mmurdoch/arduinounit.git

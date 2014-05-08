@@ -1,0 +1,2 @@
+#! /bin/sh
+make && make upload && screen /dev/tty.usbmodem* 115200
