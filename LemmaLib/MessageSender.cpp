@@ -33,7 +33,7 @@ bool MessageSender::sendMessage( char const * topicName, int value )
 }
 
 bool MessageSender::sendLongMessage( char const * topicName, long unsigned int value )
-{  
+{
   char* eventMessage = messageBuilder.buildLongMessage( topicName, value );
   bool result = sendMessage( eventMessage );
   free( eventMessage );
@@ -41,7 +41,7 @@ bool MessageSender::sendLongMessage( char const * topicName, long unsigned int v
 }
 
 bool MessageSender::sendDoubleMessage( char const * topicName, double value )
-{  
+{
   char* eventMessage = messageBuilder.buildDoubleMessage( topicName, value );
   bool result = sendMessage( eventMessage );
   free( eventMessage );
@@ -61,6 +61,13 @@ bool MessageSender::sendMessage( char const * message )
 
     free( encoded );
   }
+  return result;
+}
+
+bool MessageSender::sendHeartbeat(){
+  char* heartbeatMessage = messageBuilder.buildHeartbeat();
+  bool result = sendMessage( heartbeatMessage );
+  free( heartbeatMessage );
   return result;
 }
 

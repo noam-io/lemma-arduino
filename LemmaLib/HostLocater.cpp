@@ -4,8 +4,7 @@
 #include <string.h>
 #include "MessageParser.h"
 #include "debug.h"
-
-#define MARCO_PERIOD 2003
+#include "config.h"
 
 HostLocater::HostLocater( EthernetUDP& udpClient, const char * lemmaId, const char * desiredRoomName ) :
     udpClient( udpClient )

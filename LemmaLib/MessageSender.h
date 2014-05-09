@@ -14,6 +14,7 @@ class MessageSender
     bool sendMessage( char const * topicName, int value );
     bool sendDoubleMessage( char const * topicName, double value );
     bool sendLongMessage( char const * topicName, long unsigned int value );    
+    bool sendHeartbeat();
 
   private:
     bool sendMessage( char const * message );
