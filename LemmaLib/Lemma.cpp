@@ -172,7 +172,6 @@ void Lemma::sendHeartbeat(){
     return;
   }
   if( !heartbeat.check() ){
-    Serial.println("Lost heartbeat connection to host.");
     stopConnection();
   }
 }
