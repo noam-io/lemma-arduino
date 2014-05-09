@@ -1,6 +1,12 @@
-## Arduino Spall Repository
+## Arduino Lemma
 
-### Getting started
+### Getting Started - Using
+
+Copy the Lemma Lib to your Arduino Libraries directory
+name the directory "Lemma"
+
+
+### Getting started - Development
 
 This repository contains submodules, so after clone it you must execute the following
 
