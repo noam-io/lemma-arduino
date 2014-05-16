@@ -1,3 +1,5 @@
+//Copyright (c) 2014, IDEO 
+
 #include <ArduinoUnit.h>
 #include "TcpReader.h"
 #include "MockClient_ForReading.h"

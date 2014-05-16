@@ -1,3 +1,5 @@
+//Copyright (c) 2014, IDEO 
+
 #include <aJSON.h>
 #include <SPI.h>
 #include <Dhcp.h>

@@ -1,3 +1,5 @@
+//Copyright (c) 2014, IDEO 
+
 #include <ArduinoUnit.h>
 #include "Message.h"
 #include "string.h"

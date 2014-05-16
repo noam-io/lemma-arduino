@@ -1,3 +1,5 @@
+//Copyright (c) 2014, IDEO 
+
 #include "MockClient_ForReading.h"
 
 MockClient_ForReading::MockClient_ForReading() :

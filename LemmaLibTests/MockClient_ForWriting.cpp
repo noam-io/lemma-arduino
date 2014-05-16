@@ -1,3 +1,5 @@
+//Copyright (c) 2014, IDEO 
+
 #include "MockClient_ForWriting.h"
 
 MockClient_ForWriting::MockClient_ForWriting() :

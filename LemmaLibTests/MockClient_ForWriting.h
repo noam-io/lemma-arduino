@@ -1,3 +1,5 @@
+//Copyright (c) 2014, IDEO 
+
 #ifndef MOCK_CLIENT_FOR_WRITING
 #define MOCK_CLIENT_FOR_WRITING
 

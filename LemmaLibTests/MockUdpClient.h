@@ -1,3 +1,5 @@
+//Copyright (c) 2014, IDEO 
+
 #ifndef MOCK_UDP_CLIENT_H
 #define MOCK_UDP_CLIENT_H
 
